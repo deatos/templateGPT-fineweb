@@ -28,7 +28,7 @@ def get_data_loader(batch_size=32, shuffle=True, split='train', num_workers=0):
 def torcherize_batch(
     tokenizer, 
     batch, 
-    max_seq_len = 512, 
+    max_seq_len = 1024, 
     device: str = 'cuda' if torch.cuda.is_available() else 'cpu'
 ) -> (torch.Tensor, torch.Tensor):
     b = torch.zeros(len(batch), max_seq_len+1)
