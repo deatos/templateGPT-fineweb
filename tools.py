@@ -6,10 +6,10 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from datasets import load_dataset
 
-class TinyStoriesDataset(Dataset):
+class FineWebEduDataset(Dataset):
     def __init__(self, split):
         # Load the dataset
-        self.dataset = load_dataset("noanabeshima/TinyStoriesV2", split=split)
+        self.dataset = load_dataset("deatos/fineweb-edu-10b-combined", split=split)
         
     def __len__(self):
         # Return the size of the dataset
@@ -21,7 +21,7 @@ class TinyStoriesDataset(Dataset):
 
 def get_data_loader(batch_size=32, shuffle=True, split='train', num_workers=0):
     # Create the dataset
-    dataset = TinyStoriesDataset(split)
+    dataset = FineWebEduDataset(split)
     # Create the DataLoader
     return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
 
