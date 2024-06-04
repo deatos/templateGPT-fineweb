@@ -35,7 +35,7 @@ class ModelConfig:
     num_kv_heads: int = 1 # set =num_q_heads to revert to regular multi-head attention (not recommended)
     head_dim: int = dim // num_q_heads # most common choices are 32, 64 and especially 128 bc those are what works with FlashAttention
     theta: float = 10_000 # 10_000 is the most common choice. Llama3 uses 50_000
-    max_seq_len: int = 512 # 512 is the most my 8gb of ram can handle
+    max_seq_len: int = 1024 # Sequence len
 
     # normalization
     scale_first_resid: bool = True # whether to multiply the first residual state by sqrt(dim)
@@ -58,7 +58,7 @@ class TrainConfig:
     model_name = f'templateGPT-finewebV1' # defaults to the time that config.py was imported
     
     weight_decay: float = 0.05
-    batch_size: int = 24
+    batch_size: int = 32
     
     # total number of batches to run over the course of training
     max_iters: int = 6_000 # i recommend at least 1_000
