@@ -10,7 +10,7 @@ class ModelConfig:
     Yes I know dropout_rate should probably be in TrainConfig but it was easier to implement from here
     """
     # general hyperparameters
-    dim: int = 192
+    dim: int = 256
     device: str = 'cuda' if torch.cuda.is_available() else 'cpu' # can't do MPS bc metal doesn't support complex64 used in RoPE
     dropout_rate = 0.1 # percent of neurons to set to 0 during training as a way of adding randomness & improving generalization
 
@@ -20,7 +20,7 @@ class ModelConfig:
     # ^ that number does not include the three tokens bos, eos, and pad
 
     # Residual Layers
-    num_layers: int = 6 # small models should err on the side of many many layers at the expense of attention & mlp sizes
+    num_layers: int = 8 # small models should err on the side of many many layers at the expense of attention & mlp sizes
     second_resid_norm: bool = False # True adds an extra Norm after the attn & MLP, like in Grok. Only recommended if using RMSNorm
     
     # Multi-Layer Perceptrion
@@ -31,8 +31,8 @@ class ModelConfig:
     # ^ if gated == True, mlp_hidden_mult will automatically adjust to maintain parameter count
 
     # Multi-Query Attention
-    num_q_heads: int = 2 # `num_q_heads % num_kv_heads == 0` must be true
-    num_kv_heads: int = 1 # set =num_q_heads to revert to regular multi-head attention (not recommended)
+    num_q_heads: int = 4 # `num_q_heads % num_kv_heads == 0` must be true
+    num_kv_heads: int = 2 # set =num_q_heads to revert to regular multi-head attention (not recommended)
     head_dim: int = dim // num_q_heads # most common choices are 32, 64 and especially 128 bc those are what works with FlashAttention
     theta: float = 10_000 # 10_000 is the most common choice. Llama3 uses 50_000
     max_seq_len: int = 1024 # Sequence len
