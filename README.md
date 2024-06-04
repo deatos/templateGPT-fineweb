@@ -2,7 +2,10 @@
 
 ## about templateGPT-fineweb
 This is a fork of templateGPT from https://github.com/evintunador/templateGPT by evintunador modified to work with the dataset deatos/fineweb-edu-10b-combined on Huggingface. This is the 10billion(gpt2 tokens) random sample of fineweb-edu.
-Changes made: updated to 1024 cntx, increased batches to 32,  this will likely increase as I am aiming for defaults that work well on an Nvidia L4
+
+### Changes in templateGPT-fineweb
+1. 1024 cntx
+2. batches increased to 32, this will likely increase as I am aiming for defaults that work well on an Nvidia L4
 
 
 
