@@ -1,4 +1,10 @@
 # templateGPT
+
+## about templateGPT-fineweb
+This is a fork of templateGPT from https://github.com/evintunador/templateGPT by evintunador modified to work with the dataset deatos/fineweb-edu-10b-combined on Huggingface. This is the 10billion(gpt2 tokens) random sample of fineweb-edu.
+
+
+
 ## about
 This is the model I edit whenever I want to test a new transformer architecture idea I have. It's designed to be flexible with many large changes being tweakable from the config, easy to demonstrate what's happening in the progression of tensor shapes, and easy to read/edit the code. Feel free to toy around and build off of it, this repo is actually a template
 
