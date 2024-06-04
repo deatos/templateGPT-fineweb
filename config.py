@@ -16,7 +16,7 @@ class ModelConfig:
 
     # tokenizer
     tokenizer: str = 'bpe_v2' # must choose from one of the folders in 'tokenizers/'. current options: 'bpe_v1', 'bpe_v2'
-    vocab_len: int = 8192 # options assuming 'bpe' are 95 (character-wise), 128, 256, 512, 1024, 2048, 4096, & 8192
+    vocab_len: int = 16384 # options assuming 'bpe' are 95 (character-wise), 128, 256, 512, 1024, 2048, 4096, 8192 & 16384
     # ^ that number does not include the three tokens bos, eos, and pad
 
     # Residual Layers

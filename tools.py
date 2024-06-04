@@ -9,7 +9,7 @@ from datasets import load_dataset
 class FineWebEduDataset(Dataset):
     def __init__(self, split):
         # Load the dataset
-        self.dataset = load_dataset("deatos/fineweb-edu-10b-combined", split=split)
+        self.dataset = load_dataset("deatos/fineweb-edu-mini-combined", split=split)
         
     def __len__(self):
         # Return the size of the dataset
