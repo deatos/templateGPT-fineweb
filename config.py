@@ -55,7 +55,7 @@ class TrainConfig:
     Design your training loop here
     """
     # name of the folder the model will be saved into
-    model_name = f'{time.strftime("%Y-%m-%d|%H-%M-%S")}' # defaults to the time that config.py was imported
+    model_name = f'templateGPT-finewebV1' # defaults to the time that config.py was imported
     
     weight_decay: float = 0.05
     batch_size: int = 24
