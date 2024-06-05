@@ -6,7 +6,7 @@ This is a fork of templateGPT from https://github.com/evintunador/templateGPT by
 ### Changes in templateGPT-fineweb
 1. Changed datasource to deatos/fineweb-edu-10b-combined
 2. 1024 cntx
-3. batches increased to 32, this will likely increase as I am aiming for defaults that work well on an Nvidia L4
+3. Hyper param discovery is still ongoing
 
 
 
